@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
+import heroBg from '../images/frint-copy.jpg';
 
 const services = [
   {
@@ -32,7 +33,7 @@ const services = [
 const Services = () => {
   return (
     <div className="services-container" style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/images/g1.jpg'})`,
+        backgroundImage: `url(${heroBg})`,
       }}>
       <h1 className="section-title animate-fade">✨ Our Services</h1>
       
