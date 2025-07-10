@@ -7,7 +7,7 @@ const HeroSection = () => {
     <div
       className="hero-container"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/images/frint-copy.jpg'})`,
+        backgroundImage: `url('/images/frint-copy.jpg')`,
       }}
     >
       <div className="overlay-content">
