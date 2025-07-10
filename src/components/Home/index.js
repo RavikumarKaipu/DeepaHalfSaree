@@ -5,6 +5,7 @@ import './index.css';
 const Home = () => {
   return (
     <div>
+
       <Navbar />
       <HeroSection />
 
