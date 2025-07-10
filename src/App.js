@@ -63,7 +63,7 @@ function App() {
             <Route path="/mobile-gallery" element={<MobileGallery />} />
             <Route path="/services" element={<Services />} />
             <Route path='/splash' element={<SplashScreen/>}/>
-            <ROute path='/qr' element={<QRCodeGenerator/>}/>
+            <Route path='/qr' element={<QRCodeGenerator/>}/>
           </Routes>
         </Router>
       )}
