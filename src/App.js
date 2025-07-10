@@ -13,6 +13,7 @@ import WeddingGallery from './components/WeddingGallery';
 import MobileGallery from './components/MobileGallery';
 import Services from './components/Services';
 import './App.css';
+import QRCodeGenerator from './components/QRCode';
 
 // 👇 This component runs confetti only once on homepage
 const ConfettiOnce = () => {
@@ -62,6 +63,7 @@ function App() {
             <Route path="/mobile-gallery" element={<MobileGallery />} />
             <Route path="/services" element={<Services />} />
             <Route path='/splash' element={<SplashScreen/>}/>
+            <ROute path='/qr' element={<QRCodeGenerator/>}/>
           </Routes>
         </Router>
       )}
