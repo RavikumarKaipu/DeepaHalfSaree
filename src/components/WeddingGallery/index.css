@@ -1,0 +1,183 @@
+.gallery-container {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #0b0b0b;
+  color: #fff;
+  min-height: 100vh;
+  animation: fadeInGallery 1s ease-in-out;
+}
+
+@keyframes fadeInGallery {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-title {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #ffe6eb;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+  animation: slideDownTitle 0.8s ease-out;
+}
+
+@keyframes slideDownTitle {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Slider Section */
+.gallery-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.slider-image {
+  max-width: 82vw;
+  max-height: 68vh;
+  border-radius: 18px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, filter 0.3s;
+  box-shadow: 0 6px 28px rgba(255, 255, 255, 0.1);
+}
+
+.slider-image:hover {
+  transform: scale(1.04);
+  filter: brightness(115%);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Arrows */
+.nav-button {
+  font-size: 2rem;
+  padding: 14px 22px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: #fff;
+  color: #111;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #fff;
+}
+
+/* Lightbox Overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInLightbox 0.5s ease-in-out;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 16px;
+  cursor: zoom-out;
+  box-shadow: 0 8px 40px rgba(255, 255, 255, 0.2);
+  animation: zoomPop 0.4s ease-in-out;
+}
+
+@keyframes fadeInLightbox {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomPop {
+  from { transform: scale(0.92); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Go Back Button */
+.go-back-btn {
+  padding: 14px 32px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b6b, #b22222);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 24px rgba(255, 80, 80, 0.3);
+}
+
+.go-back-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-20deg);
+  transition: left 0.5s;
+  z-index: 0;
+}
+
+.go-back-btn:hover::before {
+  left: 100%;
+}
+
+.go-back-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(255, 80, 80, 0.5);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .slider-image {
+    max-width: 90vw;
+    max-height: 55vh;
+  }
+
+  .nav-button {
+    padding: 10px 16px;
+    font-size: 1.5rem;
+  }
+
+  .go-back-btn {
+    font-size: 15px;
+    padding: 12px 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-slider {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .slider-image {
+    max-width: 92vw;
+    max-height: 50vh;
+  }
+
+  .go-back-btn {
+    width: 80%;
+  }
+}

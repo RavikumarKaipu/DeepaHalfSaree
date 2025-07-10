@@ -1,0 +1,85 @@
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #141e30, #243b55);
+  z-index: 1000;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.smoke-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+  animation: swirl 60s linear infinite;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+@keyframes swirl {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.03); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+
+.navbar-logo {
+  font-size: 38px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 8s ease infinite, fadeInDown 1s ease forwards;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1.5px;
+}
+
+/* Bouquet Icon */
+.bouquet {
+  font-size: 32px;
+  margin-left: 10px;
+}
+
+/* Background shimmer animation */
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .navbar-logo {
+    font-size: 26px;
+  }
+
+  .bouquet {
+    font-size: 24px;
+  }
+}

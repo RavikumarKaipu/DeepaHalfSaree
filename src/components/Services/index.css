@@ -1,0 +1,174 @@
+.services-container {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #fffaf0, #ffe4e1);
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 110vh;
+  animation: fadeInSoft 1s ease;
+
+  
+}
+
+/* Headings */
+.section-title {
+  font-size: 36px;
+  color: #f70dbc;
+  font-weight: bold;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  animation: fadeSlideUp 0.8s ease forwards;
+  margin-top: 430px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #0dc5e6;
+  font-weight: bold;
+
+  animation: fadeSlideUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Grid */
+.services-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 0 20px;
+
+  
+}
+
+/* Cards */
+.service-card {
+  background: #06040a3d;
+  border:3px solid rgb(243, 240, 80);
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  border-left: 6px solid #b22222;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.9s ease forwards;
+
+ 
+}
+
+/* Content inside cards */
+.service-card h3 {
+  font-size: 20px;
+  color: #f5e504;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #16f1e6;
+  line-height: 1.6;
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Delay classes for animation staggering */
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.5s; }
+.delay-3 { animation-delay: 0.7s; }
+.delay-4 { animation-delay: 0.9s; }
+.delay-5 { animation-delay: 1.1s; }
+.delay-6 { animation-delay: 1.3s; }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .service-card {
+    padding: 24px 16px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-container {
+    padding: 60px 12px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+  }
+
+  .service-card {
+    padding: 20px 14px;
+  }
+
+  .service-card h3 {
+    font-size: 17px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+}
